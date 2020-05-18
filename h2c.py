@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
 
-#
-# https://chromedriver.storage.googleapis.com/index.html
-# download chromedriver matches the Chrome Browser version
-# you are currently using.
-#
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import sys
