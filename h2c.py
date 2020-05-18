@@ -17,7 +17,7 @@ if (len(args) == 0):
     print('\nyou need argument.\n')
     sys.exit()
 
-query = '; '.join(args)
+query = ';'.join(args)
 
 print("query: {}".format(query))
 driver = webdriver.Chrome()
@@ -27,7 +27,7 @@ driver.switch_to.frame("h2query")
 time.sleep(1)
 elem = driver.find_element_by_xpath("//textarea[@id='sql']")
 elem.clear()
-elem.send_keys("select * from fixed_data")
+elem.send_keys(query)
 elem = driver.find_element_by_xpath("//input[@value='Run']").click()
 #
 # TODO: later...
