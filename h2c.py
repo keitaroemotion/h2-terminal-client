@@ -17,10 +17,15 @@ if (len(args) == 0):
     print('\nyou need argument.\n')
     sys.exit()
 
+options = Options()
+if '--headless' in args:
+    options.add_argument('--headless')
+    args.remove('--headless')
+
 query = ';'.join(args)
 
 print("query: {}".format(query))
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(options=options)
 driver.get('http://localhost:8080/dbconsole/login.jsp')
 driver.find_element_by_xpath("//input[@type='submit']").click()
 driver.switch_to.frame("h2query")
